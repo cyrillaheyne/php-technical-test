@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Running;
 use App\Form\RunningType;
 use App\Repository\RunningRepository;
+use App\Service\ApiConnector;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -91,4 +92,6 @@ class RunningController extends AbstractController
 
         return $this->redirectToRoute('running_index');
     }
+
+
 }

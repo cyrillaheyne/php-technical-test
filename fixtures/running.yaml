@@ -7,6 +7,6 @@ App\Entity\Running:
     user: '@user_<numberBetween(1,10)>'
     type: '@running_type_<numberBetween(1,3)>'
     startDate: '<dateTimeBetween("-50 days", "now")>'
-œ    duration: '<numberBetween(50,100)>'
+    duration: '<numberBetween(50,100)>'
     distance: '<numberBetween(10, 20)>'
     comment: '<text()>'

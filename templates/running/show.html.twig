@@ -18,27 +18,27 @@
                 </tr>
                 <tr>
                     <th>StartDate</th>
-                    <td>{{ running.startDate ? running.startDate|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ running.startDate ? running.startDate|date('d-m-Y H:i:s') : '' }}</td>
                 </tr>
                 <tr>
                     <th>Duration</th>
-                    <td>{{ running.duration }}</td>
+                    <td>{{ running.duration }} min</td>
                 </tr>
                 <tr>
                     <th>Distance</th>
-                    <td>{{ running.distance }}</td>
+                    <td>{{ running.distance }} Km</td>
+                </tr>
+                <tr>
+                    <th>AverageSpeed</th>
+                    <td>{{ running.averageSpeed }} Km/H</td>
+                </tr>
+                <tr>
+                    <th>AveragePace</th>
+                    <td>{{ running.averagePace }} m/Km</td>
                 </tr>
                 <tr>
                     <th>Comment</th>
                     <td>{{ running.comment }}</td>
-                </tr>
-                <tr>
-                    <th>AverageSpeed</th>
-                    <td>{{ running.averageSpeed }}</td>
-                </tr>
-                <tr>
-                    <th>AveragePace</th>
-                    <td>{{ running.averagePace }}</td>
                 </tr>
             </tbody>
         </table>
