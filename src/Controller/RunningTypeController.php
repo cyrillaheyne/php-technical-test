@@ -38,6 +38,7 @@ class RunningTypeController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($runningType);
             $entityManager->flush();
+            $this->addFlash('success', 'Création OK');
 
             return $this->redirectToRoute('running_type_index');
         }
@@ -68,6 +69,7 @@ class RunningTypeController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'Modification OK');
 
             return $this->redirectToRoute('running_type_index');
         }
@@ -87,6 +89,8 @@ class RunningTypeController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($runningType);
             $entityManager->flush();
+            $this->addFlash('success', 'Suppression OK');
+
         }
 
         return $this->redirectToRoute('running_type_index');

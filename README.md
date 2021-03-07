@@ -1,3 +1,24 @@
+#Lancer l'application
+- composer install
+- php bin/console doctrine:database:create
+- php bin/console doctrine:migrations:migrate
+- yarn install
+- yarn encore dev
+
+### chargement des fixtures
+- php bin/console hautelook:fixtures:load
+
+### Compte admin
+login : admin@admin.fr
+mdp : admin
+
+### API
+l'api est sécurisée, pour enlevé la sécurité modifier "anonymous: false" en
+"anonymous: true" sur le firewall api 
+
+Route de connexion api pour récuperer le token :
+- /api/login_check
+
 # StadLine Technical Test
 
 ## Présentation générale

@@ -40,6 +40,8 @@ class RunningController extends AbstractController
             $entityManager->persist($running);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Création OK');
+
             return $this->redirectToRoute('running_index');
         }
 
@@ -69,6 +71,7 @@ class RunningController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'Modification OK');
 
             return $this->redirectToRoute('running_index');
         }
@@ -88,6 +91,8 @@ class RunningController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($running);
             $entityManager->flush();
+            $this->addFlash('success', 'Suppression ok');
+
         }
 
         return $this->redirectToRoute('running_index');
