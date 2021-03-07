@@ -1,3 +1,4 @@
+# mot de passe : admin
 parameters:
   password: '$2y$10$Pcqp83pympoWZ/2O2X0geORRNhgwYiy1wce9N3XJBKJcx34VYhQQe'
 

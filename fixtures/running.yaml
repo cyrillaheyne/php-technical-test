@@ -1,0 +1,12 @@
+parameters:
+  password: '$2y$10$Pcqp83pympoWZ/2O2X0geORRNhgwYiy1wce9N3XJBKJcx34VYhQQe'
+
+App\Entity\Running:
+
+  running_{1..30}:
+    user: '@user_<numberBetween(1,10)>'
+    type: '@running_type_<numberBetween(1,3)>'
+    startDate: '<dateTimeBetween("-50 days", "now")>'
+    duration: '<numberBetween(15, 180)>'
+    distance: '<numberBetween(20, 200)>'
+    comment: '<text()>'

@@ -1,0 +1,13 @@
+parameters:
+  password: '$2y$10$Pcqp83pympoWZ/2O2X0geORRNhgwYiy1wce9N3XJBKJcx34VYhQQe'
+
+App\Entity\RunningType:
+
+  running_type_1 :
+    name: 'entrainement'
+
+  running_type_2 :
+    name: 'course'
+
+  running_type_3 :
+    name: 'loisir'
