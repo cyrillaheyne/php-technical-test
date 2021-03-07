@@ -3,14 +3,20 @@
 namespace App\EventListener;
 
 use App\Entity\Running;
+use App\Service\RunningService;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Events;
 
 class RunningSubscriber implements EventSubscriber
 {
-    // this method can only return the event names; you cannot define a
-    // custom method name to execute when each event triggers
+    protected $runningService;
+
+    public function __construct(RunningService $runningService)
+    {
+        $this->runningService = $runningService;
+    }
+
     public function getSubscribedEvents(): array
     {
         return [
@@ -34,8 +40,7 @@ class RunningSubscriber implements EventSubscriber
         $entity = $args->getEntity();
 
         if($entity instanceof Running) {
-            $entity->setAveragePace(0);
-            $entity->setAverageSpeed(0);
+            $this->runningService->calculateAverage($entity);
         }
 
     }

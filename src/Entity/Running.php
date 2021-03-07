@@ -145,7 +145,7 @@ class Running
 
     public function setAverageSpeed(float $averageSpeed): self
     {
-        $this->averageSpeed = $averageSpeed;
+        $this->averageSpeed = round($averageSpeed,2);
 
         return $this;
     }
@@ -157,7 +157,7 @@ class Running
 
     public function setAveragePace(float $averagePace): self
     {
-        $this->averagePace = $averagePace;
+        $this->averagePace = round($averagePace,2);
 
         return $this;
     }
