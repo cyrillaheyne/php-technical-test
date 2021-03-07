@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Running{% endblock %}
+
+{% block body %}
+    <h1>Running</h1>
+
+    <div class="container">
+        <div class="d-flex justify-content-end">
+            {{ include('running/_delete_form.html.twig') }}
+        </div>
+
+        <table class="table mt-5">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ running.id }}</td>
+                </tr>
+                <tr>
+                    <th>StartDate</th>
+                    <td>{{ running.startDate ? running.startDate|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Duration</th>
+                    <td>{{ running.duration }}</td>
+                </tr>
+                <tr>
+                    <th>Distance</th>
+                    <td>{{ running.distance }}</td>
+                </tr>
+                <tr>
+                    <th>Comment</th>
+                    <td>{{ running.comment }}</td>
+                </tr>
+                <tr>
+                    <th>AverageSpeed</th>
+                    <td>{{ running.averageSpeed }}</td>
+                </tr>
+                <tr>
+                    <th>AveragePace</th>
+                    <td>{{ running.averagePace }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <div class="d-flex justify-content-center">
+                <div class="btn-group">
+                    <a href="{{ path('running_index') }}" class="btn btn-warning float-right">Retour à la liste</a>
+                    <a href="{{ path('running_edit', {'id': running.id}) }}" class="btn btn-success float-right">Modifier</a>
+                </div>
+        </div>
+    </div>
+{% endblock %}

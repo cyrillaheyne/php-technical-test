@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Running{% endblock %}
+
+{% block body %}
+    <h1>Create new Running</h1>
+    <div class="container">
+        <div class="d-flex justify-content-end">
+             <a class="btn btn-warning" href="{{ path('running_index') }}">retour à la liste</a>
+        </div>
+    {{ include('running/_form.html.twig') }}
+    </div>
+{% endblock %}

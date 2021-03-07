@@ -20,6 +20,18 @@
         {{ include('sideNav.html.twig') }}
         <div id="layoutSidenav_content">
             <main>
+                <div class="flash-messages">
+                    {% block flashes %}
+                        {% for notice_level in ['success','error','info', 'warning', 'notice'] %}
+                            {% for message in app.flashes(notice_level) %}
+                                <div class="alert alert-{{ notice_level }}">
+                                    <a class="close" data-dismiss="alert" href="#">x</a>
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endblock flashes %}
+                </div>
         {% block body %}{% endblock %}
             </main>
         </div>

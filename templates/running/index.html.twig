@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Running index{% endblock %}
+
+{% block body %}
+    <h1>Sorties</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="{{ path('running_new') }}" class="btn btn-success float-right">Nouveau</a>
+            </div>
+        </div>
+    <table class="table mt-5">
+        <thead class="thead-dark">
+            <tr>
+                <th>actions</th>
+                <th>Id</th>
+                <th>StartDate</th>
+                <th>Duration</th>
+                <th>Distance</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for running in runnings %}
+            <tr>
+                <td>
+                    <div class="btn-group">
+                        <a href="{{ path('running_show', {'id': running.id}) }}" type="button" class="btn btn-primary"><i class="fa fa-eye"></i></a>
+                        <a href="{{ path('running_edit', {'id': running.id}) }}" type="button" class="btn btn-success"><i class="fa fa-edit"></i></a>
+                    </div>
+                </td>
+                <td>{{ running.id }}</td>
+                <td>{{ running.startDate ? running.startDate|date('d-m-Y H:i:s') : '' }}</td>
+                <td>{{ running.duration }} min</td>
+                <td>{{ running.distance }} Km</td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

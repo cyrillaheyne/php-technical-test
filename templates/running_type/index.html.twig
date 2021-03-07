@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RunningType index{% endblock %}
+
+{% block body %}
+    <h1>Types de sorties</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a href="{{ path('running_type_new') }}" class="btn btn-success float-right">Nouveau</a>
+        </div>
+    </div>
+
+    <table class="table mt-5">
+        <thead class="thead-dark">
+            <tr>
+                <th>actions</th>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for running_type in running_types %}
+            <tr>
+                <td>
+                    <div class="btn-group">
+                        <a href="{{ path('running_type_show', {'id': running_type.id}) }}" type="button" class="btn btn-primary"><i class="fa fa-eye"></i></a>
+                        <a href="{{ path('running_type_edit', {'id': running_type.id}) }}" type="button" class="btn btn-success"><i class="fa fa-edit"></i></a>
+                    </div>
+                </td>
+                <td>{{ running_type.id }}</td>
+                <td>{{ running_type.name }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

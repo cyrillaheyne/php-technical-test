@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New User{% endblock %}
+
+{% block body %}
+    <h1>Create new User</h1>
+
+    <div class="container">
+        <div class="d-flex justify-content-end">
+            <a class="btn btn-warning" href="{{ path('user_index') }}">retour à la liste</a>
+        </div>
+    {{ include('user/_form.html.twig') }}
+
+    </div>
+{% endblock %}
