@@ -1,3 +1,5 @@
+https://meet.google.com/hmg-aksm-abv?authuser=1
+
 #Lancer l'application
 - composer install
 - php bin/console doctrine:database:create
